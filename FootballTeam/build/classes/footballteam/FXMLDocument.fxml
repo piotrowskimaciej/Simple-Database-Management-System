@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="footballteam.FXMLDocumentController">
+   <children>
+      <SplitPane dividerPositions="0.2506265664160401" layoutX="92.0" layoutY="29.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="365.0" prefWidth="146.0">
+               <children>
+                  <Button fx:id="changeTeam" layoutX="87.0" layoutY="37.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Drużyna" />
+                  <Button fx:id="changePlayers" layoutX="87.0" layoutY="75.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Zawodnicy" />
+                  <Button fx:id="changeCoach" layoutX="87.0" layoutY="114.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Trener" />
+                  <Button fx:id="changeStadiums" layoutX="87.0" layoutY="152.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Stadion" />
+                  <Button fx:id="cahangeSuccesses" layoutX="87.0" layoutY="192.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Sukcesy" />
+                  <Button fx:id="runParser" layoutX="71.0" layoutY="385.0" mnemonicParsing="false" text="Uruchom Parser" />
+                  <Button fx:id="disconnectDB" layoutX="75.0" layoutY="427.0" mnemonicParsing="false" text="Rozłącz z bazą" />
+                  <Button fx:id="connectDB" layoutX="75.0" layoutY="426.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="93.0" text="Połącz z bazą" />
+                  <Button fx:id="closeApplication" layoutX="69.0" layoutY="467.0" mnemonicParsing="false" text="Zamknij program" />
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="444.0">
+               <children>
+                  <SplitPane fx:id="players" dividerPositions="0.6010430247718384" layoutX="2.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="444.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button fx:id="proccedPlayers" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Wyświetl dane" />
+                              <Label layoutX="144.0" layoutY="2.0" text="Wyszukiwanie zawodników wg nazwy zespołu:" />
+                              <TextField fx:id="searchPlayers" layoutX="144.0" layoutY="27.0" prefHeight="27.0" prefWidth="153.0" promptText="Nazwa drużyny" />
+                              <Button fx:id="proccedSearchPlayers" layoutX="314.0" layoutY="27.0" mnemonicParsing="false" text="Wyświetl dane" />
+                              <Label layoutX="14.0" layoutY="54.0" text="Dodaj zawodnika:" />
+                              <TextField fx:id="addPWeight" layoutX="14.0" layoutY="109.0" prefHeight="27.0" prefWidth="85.0" promptText="Waga (kg)" />
+                              <TextField fx:id="addPNationality" layoutX="110.0" layoutY="109.0" prefHeight="27.0" prefWidth="123.0" promptText="Narodowość" />
+                              <TextField fx:id="addPHeight" layoutX="507.0" layoutY="75.0" prefHeight="27.0" prefWidth="123.0" promptText="Wzrost (cm)" />
+                              <TextField fx:id="addPDOB" layoutX="375.0" layoutY="75.0" prefHeight="27.0" prefWidth="123.0" promptText="Data urodzenia" />
+                              <TextField fx:id="addPSurname" layoutX="244.0" layoutY="75.0" prefHeight="27.0" prefWidth="123.0" promptText="Nazwisko" />
+                              <TextField fx:id="addPName" layoutX="110.0" layoutY="75.0" prefHeight="27.0" prefWidth="123.0" promptText="Imie" />
+                              <TextField fx:id="addPPosition" layoutX="244.0" layoutY="109.0" prefHeight="27.0" prefWidth="123.0" promptText="Pozycja" />
+                              <TextField fx:id="addPNumber" layoutX="375.0" layoutY="109.0" prefHeight="27.0" prefWidth="123.0" promptText="Numer" />
+                              <TextField fx:id="addPDD" layoutX="507.0" layoutY="109.0" prefHeight="27.0" prefWidth="123.0" promptText="Data debiutu" />
+                              <TextField fx:id="addPTId" layoutX="14.0" layoutY="75.0" prefHeight="27.0" prefWidth="85.0" promptText="Id drużyny" />
+                              <Button fx:id="proccedAddPlayer" layoutX="641.0" layoutY="109.0" mnemonicParsing="false" text="Dodaj" />
+                              <Label layoutX="14.0" layoutY="158.0" text="Aktualizacja danych (Podaj ID zawodika):" />
+                              <TextField fx:id="updatePTId" layoutX="14.0" layoutY="187.0" prefHeight="27.0" prefWidth="98.0" promptText="Id drużyny" />
+                              <TextField fx:id="updatePName" layoutX="14.0" layoutY="221.0" prefHeight="27.0" prefWidth="98.0" promptText="Imie" />
+                              <TextField fx:id="updatePSurname" layoutX="14.0" layoutY="254.0" prefHeight="27.0" prefWidth="98.0" promptText="Nazwisko" />
+                              <Button fx:id="proccedUpdatePTId" layoutX="121.0" layoutY="188.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdatePName" layoutX="121.0" layoutY="222.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdatePSurname" layoutX="121.0" layoutY="255.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updatePDOB" layoutX="227.0" layoutY="187.0" prefHeight="27.0" prefWidth="98.0" promptText="Data urodzenia" />
+                              <TextField fx:id="updatePHeight" layoutX="227.0" layoutY="221.0" prefHeight="27.0" prefWidth="98.0" promptText="Wzrost (cm)" />
+                              <TextField fx:id="updatePWeight" layoutX="227.0" layoutY="255.0" prefHeight="27.0" prefWidth="98.0" promptText="Waga (kg)" />
+                              <Button fx:id="proccedUpdatePWeight" layoutX="336.0" layoutY="256.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdatePHeight" layoutX="336.0" layoutY="223.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdatePDOB" layoutX="336.0" layoutY="189.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updatePNationality" layoutX="437.0" layoutY="189.0" prefHeight="27.0" prefWidth="98.0" promptText="Narodowość" />
+                              <TextField fx:id="updatePPosition" layoutX="437.0" layoutY="221.0" prefHeight="27.0" prefWidth="98.0" promptText="Pozycja" />
+                              <TextField fx:id="updatePNumber" layoutX="437.0" layoutY="256.0" prefHeight="27.0" prefWidth="98.0" promptText="Numer" />
+                              <Button fx:id="proccedUpdatePNation" layoutX="545.0" layoutY="190.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdatePPosition" layoutX="545.0" layoutY="224.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdatePNumber" layoutX="545.0" layoutY="257.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updatePDD" layoutX="226.0" layoutY="290.0" prefHeight="27.0" prefWidth="98.0" promptText="Data debiutu" />
+                              <Button fx:id="proccedUpdatePDD" layoutX="336.0" layoutY="290.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="selectPId" layoutX="278.0" layoutY="153.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Button fx:id="proccedDeletePlayer" layoutX="307.0" layoutY="336.0" mnemonicParsing="false" text="Usuń" />
+                              <TextField fx:id="deletePlayer" layoutX="257.0" layoutY="336.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Label layoutX="14.0" layoutY="341.0" text="Usuń zawodnika (Podaj ID zawodnika):" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox layoutX="14.0" layoutY="6.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="6.0">
+                                 <children>
+                                    <Label layoutX="188.0" layoutY="6.0" text="Zawodnicy" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="6.0" />
+                                    <TableView fx:id="tablePlayers" layoutX="14.0" layoutY="36.0" prefHeight="257.0" prefWidth="752.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+                                      <columns>
+                                        <TableColumn fx:id="pId" prefWidth="25.0" text="Id" />
+                                          <TableColumn fx:id="pTeamName" prefWidth="75.0" text="Nazwa drużyny" />
+                                        <TableColumn fx:id="pName" prefWidth="47.0" text="Imie" />
+                                          <TableColumn fx:id="pSurname" minWidth="9.0" prefWidth="70.0" text="Nazwisko" />
+                                          <TableColumn fx:id="pDOB" minWidth="0.0" prefWidth="100.0" text="Data urodzenia" />
+                                          <TableColumn fx:id="pHeight" prefWidth="82.0" text="Wzrost (cm)" />
+                                          <TableColumn fx:id="pWeight" prefWidth="70.0" text="Waga (kg)" />
+                                          <TableColumn fx:id="pNationality" prefWidth="87.0" text="Narodowość" />
+                                          <TableColumn fx:id="pPosition" prefWidth="57.0" text="Pozycja" />
+                                          <TableColumn fx:id="pNumber" minWidth="0.0" prefWidth="47.0" text="Numer" />
+                                          <TableColumn fx:id="pDateDebut" prefWidth="88.0" text="Data debiutu" />
+                                          <TableColumn fx:id="pIdTeam" prefWidth="72.0" text="Id drużyny" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <SplitPane fx:id="coach" dividerPositions="0.4511082138200782" layoutX="80.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="444.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button fx:id="proccedCoach" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Wyświetl dane" />
+                              <Label layoutX="14.0" layoutY="50.0" text="Dodaj trenera" />
+                              <TextField fx:id="addCTId" layoutX="15.0" layoutY="67.0" prefHeight="27.0" prefWidth="84.0" promptText="Id drużyny" />
+                              <TextField fx:id="addCName" layoutX="107.0" layoutY="67.0" prefHeight="27.0" prefWidth="102.0" promptText="Imie" />
+                              <TextField fx:id="addCSurname" layoutX="219.0" layoutY="67.0" prefHeight="27.0" prefWidth="123.0" promptText="Nazwisko" />
+                              <TextField fx:id="addCDOB" layoutX="352.0" layoutY="67.0" prefHeight="27.0" prefWidth="123.0" promptText="Data urodzenia" />
+                              <TextField fx:id="addCNation" layoutX="487.0" layoutY="67.0" prefHeight="27.0" prefWidth="123.0" promptText="Narodowość" />
+                              <Button fx:id="proccedAddCoach" layoutX="620.0" layoutY="67.0" mnemonicParsing="false" text="Dodaj" />
+                              <TextField fx:id="updateCName" layoutX="19.0" layoutY="144.0" prefHeight="27.0" prefWidth="98.0" promptText="Imie" />
+                              <TextField fx:id="updateCSurname" layoutX="19.0" layoutY="176.0" prefHeight="27.0" prefWidth="98.0" promptText="Nazwisko" />
+                              <Button fx:id="proccedUpdateCName" layoutX="128.0" layoutY="144.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdateCSurname" layoutX="128.0" layoutY="177.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updateCDOB" layoutX="234.0" layoutY="144.0" prefHeight="27.0" prefWidth="98.0" promptText="Data urodzenia" />
+                              <TextField fx:id="updateCNationality" layoutX="234.0" layoutY="178.0" prefHeight="27.0" prefWidth="98.0" promptText="Narodowość" />
+                              <Button fx:id="proccedUpdateCNationality" layoutX="343.0" layoutY="176.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdateCDOB" layoutX="343.0" layoutY="144.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Label layoutX="17.0" layoutY="115.0" text="Aktualizacja danych (Podaj ID trenera):" />
+                              <TextField fx:id="selectCId" layoutX="272.0" layoutY="110.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Button fx:id="proccedDeleteCoach" layoutX="280.0" layoutY="226.0" mnemonicParsing="false" text="Usuń" />
+                              <TextField fx:id="deleteCoach" layoutX="230.0" layoutY="226.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Label layoutX="19.0" layoutY="231.0" text="Usuń trenera (Podaj ID trenera):" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox layoutX="13.0" layoutY="6.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="6.0">
+                                 <children>
+                                    <Label layoutX="201.0" layoutY="6.0" text="Trener" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="6.0" />
+                                    <TableView fx:id="tableCoach" layoutX="13.0" layoutY="36.0" prefHeight="281.0" prefWidth="753.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+                                      <columns>
+                                        <TableColumn fx:id="cId" prefWidth="38.0" text="Id" />
+                                        <TableColumn fx:id="cName" prefWidth="82.0" text="Imie" />
+                                          <TableColumn fx:id="cSurname" text="Nazwisko" />
+                                          <TableColumn fx:id="cDOB" prefWidth="107.0" text="Data urodzenia" />
+                                          <TableColumn fx:id="cNationality" prefWidth="92.0" text="Noarodowść" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <SplitPane fx:id="stadiums" dividerPositions="0.4002607561929596" layoutX="22.0" layoutY="-15.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="444.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button fx:id="proccedStadiums" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Wyświetl dane" />
+                              <Label layoutX="14.0" layoutY="51.0" text="Dodaj stadion:" />
+                              <TextField fx:id="AddSTId" layoutX="16.0" layoutY="68.0" prefHeight="27.0" prefWidth="102.0" promptText="Id drużyny" />
+                              <TextField fx:id="addSName" layoutX="129.0" layoutY="68.0" prefHeight="27.0" prefWidth="135.0" promptText="Nazwa" />
+                              <TextField fx:id="addSYOC" layoutX="273.0" layoutY="68.0" prefHeight="27.0" prefWidth="135.0" promptText="Rok budowy" />
+                              <TextField fx:id="addSCStands" layoutX="418.0" layoutY="68.0" prefHeight="27.0" prefWidth="135.0" promptText="Pojemność trybun" />
+                              <Button fx:id="proccedAddStadium" layoutX="565.0" layoutY="68.0" mnemonicParsing="false" text="Dodaj" />
+                              <TextField fx:id="selectSId" layoutX="269.0" layoutY="112.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Label layoutX="14.0" layoutY="117.0" text="Aktualizacja danych (Podaj ID stadionu):" />
+                              <Button fx:id="proccedUpdateSYOC" layoutX="336.0" layoutY="146.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdateSCStands" layoutX="551.0" layoutY="145.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updateSCStands" layoutX="442.0" layoutY="147.0" prefHeight="27.0" prefWidth="98.0" promptText="Pojemność trybun" />
+                              <TextField fx:id="updateSYOC" layoutX="227.0" layoutY="146.0" prefHeight="27.0" prefWidth="98.0" promptText="Rok budowy" />
+                              <Button fx:id="proccedUpdateSName" layoutX="121.0" layoutY="146.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updateSName" layoutX="14.0" layoutY="146.0" prefHeight="27.0" prefWidth="98.0" promptText="Nazwa" />
+                              <Label layoutX="14.0" layoutY="193.0" text="Usuń stadion (Podaj ID stadionu):" />
+                              <TextField fx:id="deleteStadium" layoutX="225.0" layoutY="188.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Button fx:id="proccedDeleteStadium" layoutX="275.0" layoutY="188.0" mnemonicParsing="false" text="Usuń" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox layoutX="37.0" layoutY="14.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="14.0">
+                                 <children>
+                                    <Label layoutX="198.0" layoutY="14.0" text="Stadion" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="14.0" />
+                                    <TableView fx:id="tableStadiums" layoutX="37.0" layoutY="43.0" prefHeight="285.0" prefWidth="706.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="43.0">
+                                      <columns>
+                                        <TableColumn fx:id="sId" prefWidth="36.0" text="Id" />
+                                        <TableColumn fx:id="sName" prefWidth="97.0" text="Nazwa" />
+                                          <TableColumn fx:id="sYOC" prefWidth="92.0" text="Rok budowy" />
+                                          <TableColumn fx:id="sCapacityStands" prefWidth="135.0" text="Pojemność trybun" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <SplitPane fx:id="successes" dividerPositions="0.4002607561929596" layoutX="92.0" layoutY="52.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="444.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button fx:id="proccedSuccesses" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Wyświetl dane" />
+                              <TextField fx:id="searchSuccess" layoutX="142.0" layoutY="25.0" />
+                              <Button fx:id="proccedSearchSuccess" layoutX="325.0" layoutY="25.0" mnemonicParsing="false" text="Wyświetl dane" />
+                              <Label layoutX="142.0" layoutY="3.0" text="Wyszukiwanie sukcesu wg nazwy drużyny" />
+                              <Label layoutX="14.0" layoutY="59.0" text="Dodaj sukces:" />
+                              <TextField fx:id="addSTId" layoutX="310.0" layoutY="76.0" prefHeight="27.0" prefWidth="108.0" promptText="Id drużyny" />
+                              <TextField fx:id="addSeason" layoutX="57.0" layoutY="76.0" prefHeight="27.0" prefWidth="108.0" promptText="Sezon" />
+                              <TextField fx:id="addSId" layoutX="14.0" layoutY="76.0" prefHeight="27.0" prefWidth="32.0" promptText="Id" />
+                              <TextField fx:id="addTOS" layoutX="175.0" layoutY="76.0" prefHeight="27.0" prefWidth="123.0" promptText="Rodzaj sukcesu" />
+                              <Button fx:id="proccedAddSuccess" layoutX="432.0" layoutY="76.0" mnemonicParsing="false" text="Dodaj" />
+                              <Button fx:id="procceddeleteSuccess" layoutX="393.0" layoutY="124.0" mnemonicParsing="false" text="Usuń" />
+                              <TextField fx:id="deleteSuccess" layoutX="271.0" layoutY="125.0" prefHeight="27.0" prefWidth="114.0" promptText="Id" />
+                              <Label layoutX="19.0" layoutY="125.0" prefHeight="17.0" prefWidth="205.0" text="Usuń sezon (Podaj ID sukcesu):" />
+                              <TextField fx:id="deleteSuccessIdType" layoutX="271.0" layoutY="154.0" prefHeight="27.0" prefWidth="114.0" promptText="Id typu sukcesu" />
+                              <Label layoutX="20.0" layoutY="159.0" prefHeight="17.0" prefWidth="243.0" text="Usuń sukces (Podaj ID typu sukcesu):" />
+                              <Button fx:id="procceddeleteSuccessType" layoutX="393.0" layoutY="154.0" mnemonicParsing="false" text="Usuń" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox layoutX="51.0" layoutY="14.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="14.0">
+                                 <children>
+                                    <Label layoutX="204.0" layoutY="14.0" text="Sukcesy" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="186.0" AnchorPane.topAnchor="14.0" />
+                                    <TableView fx:id="tableSuccesses" layoutX="51.0" layoutY="46.0" prefHeight="315.0" prefWidth="677.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="46.0">
+                                      <columns>
+                                        <TableColumn fx:id="ssId" prefWidth="30.0" text="Id" />
+                                        <TableColumn fx:id="ssTeamName" prefWidth="108.0" text="Nazwa drużyny" />
+                                          <TableColumn fx:id="ssSeason" prefWidth="95.0" text="Sezon" />
+                                          <TableColumn fx:id="ssSuccess" prefWidth="126.0" text="Rodzaj sukcesu" />
+                                          <TableColumn fx:id="ssIdTypeSuccess" prefWidth="113.0" text="Id typu sukcesu" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <SplitPane fx:id="team" dividerPositions="0.4641460234680574" layoutX="104.0" layoutY="49.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="444.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="442.0">
+                           <children>
+                              <TextField fx:id="searchTeam" layoutX="145.0" layoutY="25.0" prefHeight="27.0" prefWidth="153.0" promptText="Nazwa drużyny" />
+                              <Button fx:id="proccedTeam" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="108.0" text="Wyświetl dane" />
+                              <Label layoutX="145.0" layoutY="3.0" text="Wyszukiwanie wg nazwy drużyny:" />
+                              <Button fx:id="proccedSearchT" layoutX="314.0" layoutY="25.0" mnemonicParsing="false" text="Wyświetl dane" />
+                              <Label layoutX="14.0" layoutY="52.0" text="Dodaj drużynę" />
+                              <TextField fx:id="addTeamName" layoutX="14.0" layoutY="69.0" prefHeight="27.0" prefWidth="107.0" promptText="Nazwa" />
+                              <TextField fx:id="addColors" layoutX="244.0" layoutY="69.0" prefHeight="27.0" prefWidth="107.0" promptText="Barwy" />
+                              <TextField fx:id="addNation" layoutX="359.0" layoutY="69.0" prefHeight="27.0" prefWidth="108.0" promptText="Kraj" />
+                              <TextField fx:id="addEstablished" layoutX="130.0" layoutY="69.0" prefHeight="27.0" prefWidth="107.0" promptText="Rok założenia" />
+                              <Button fx:id="proccedAddTeam" layoutX="479.0" layoutY="69.0" mnemonicParsing="false" text="Dodaj" />
+                              <TextField fx:id="selectTId" layoutX="265.0" layoutY="106.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Label layoutX="14.0" layoutY="111.0" text="Aktualizacja danych (Podaj ID drużyny):" />
+                              <Button fx:id="proccedUpdateTColors" layoutX="336.0" layoutY="142.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdateTCountry" layoutX="336.0" layoutY="176.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updateTCountry" layoutX="227.0" layoutY="174.0" prefHeight="27.0" prefWidth="98.0" promptText="Kraj" />
+                              <TextField fx:id="updateTColors" layoutX="227.0" layoutY="140.0" prefHeight="27.0" prefWidth="98.0" promptText="Barwy" />
+                              <Button fx:id="proccedUpdateTEstablished" layoutX="121.0" layoutY="173.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <Button fx:id="proccedUpdateTName" layoutX="121.0" layoutY="140.0" mnemonicParsing="false" text="Aktualizuj" />
+                              <TextField fx:id="updateTEstablished" layoutX="14.0" layoutY="172.0" prefHeight="27.0" prefWidth="98.0" promptText="Rok założenia" />
+                              <TextField fx:id="updateTName" layoutX="14.0" layoutY="139.0" prefHeight="27.0" prefWidth="98.0" promptText="Nazwa drużyny" />
+                              <Label layoutX="14.0" layoutY="220.0" text="Usuń drużynę (Podaj ID drużyny):" />
+                              <TextField fx:id="deleteTeam" layoutX="225.0" layoutY="215.0" prefHeight="27.0" prefWidth="39.0" promptText="Id" />
+                              <Button fx:id="proccedDeleteTeam" layoutX="275.0" layoutY="215.0" mnemonicParsing="false" text="Usuń" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane fx:id="details" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox layoutX="13.0" layoutY="6.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="6.0">
+                                 <children>
+                                    <Label layoutX="196.0" layoutY="6.0" text="Drużyna" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="196.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="6.0" />
+                                    <TableView fx:id="tableTeam" layoutX="13.0" layoutY="36.0" prefHeight="265.0" prefWidth="753.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+                                      <columns>
+                                        <TableColumn fx:id="tId" prefWidth="41.0" text="Id" />
+                                        <TableColumn fx:id="tTeamName" prefWidth="111.0" text="Nazwa" />
+                                          <TableColumn fx:id="tEstablished" prefWidth="91.0" text="Rok założenia" />
+                                          <TableColumn fx:id="tColours" text="Barwy" />
+                                          <TableColumn fx:id="tNationality" prefWidth="92.0" text="Kraj" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <MenuBar prefHeight="29.0" prefWidth="1050.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Plik">
+            <items>
+              <MenuItem fx:id="close" mnemonicParsing="false" text="Zakończ" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Akcja">
+            <items>
+              <MenuItem fx:id="connect" mnemonicParsing="false" text="Połącz z bazą " />
+                  <MenuItem fx:id="disconnect" mnemonicParsing="false" text="Rozłącz z bazą" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Pomoc">
+            <items>
+              <MenuItem fx:id="infromations" mnemonicParsing="false" text="Informacje" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
